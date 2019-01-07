@@ -10,7 +10,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use( require('./rutas/usuario') );
+//Configuracion global de rutas
+app.use(require('./rutas/index'));
 
 //coneccion BD
 mongoose.connect(process.env.URLDB, (err, res)=> {
